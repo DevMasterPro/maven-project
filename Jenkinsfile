@@ -17,7 +17,7 @@ pipeline {
         pollSCM('* * * * *')
     }
 
-    stage('build'){
+    stages('build'){
 
         steps{
 
@@ -37,7 +37,7 @@ pipeline {
 
     }
 
-    stage('deploy to staging'){
+    stages('deploy to staging'){
 
         steps{
 
@@ -59,7 +59,7 @@ pipeline {
 
     }
 
-    stage('deploy to production'){
+    stages('deploy to production'){
 
 
 
