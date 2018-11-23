@@ -13,7 +13,7 @@ pipeline {
 
     stages{
 
-        stages ('build'){
+        stage ('build'){
             steps {
                 sh 'mvn clean package'
             }
@@ -24,7 +24,7 @@ pipeline {
                 }
             }
         }
-        stages ('deploy to staging'){
+        stage ('deploy to staging'){
             steps{
                 sh 'scp -i  /home/ec2-user/aws-shahin.pem **/target/*.war ec2-user@${params.tomcat_uat}:/opt/tomcat/tomcat8/webapps'
             }
@@ -37,7 +37,7 @@ pipeline {
                 }
             }
         }
-        stages ('deploy to production'){
+        stage ('deploy to production'){
             steps{
                     timeout(time:5, unit:'DAYS'){
                         input message:'Approve PRODUCTION Deployment?'
