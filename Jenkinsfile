@@ -26,7 +26,7 @@ pipeline {
         }
         stage ('deploy to staging'){
             steps{
-                sh 'scp -i  /Users/shahinahmed/Documents/aws-shahin.pem /var/lib/jenkins/workspace/package/webapp/target/webapp.war ec2-user@34.243.81.194:/opt/tomcat/tomcat8/webapps'
+                sh 'scp -i  /Users/Shared/Jenkins/aws-shahin.pem /var/lib/jenkins/workspace/package/webapp/target/webapp.war ec2-user@34.243.81.194:/opt/tomcat/tomcat8/webapps'
             }
             post{
                 success{
@@ -42,7 +42,7 @@ pipeline {
                     timeout(time:5, unit:'DAYS'){
                         input message:'Approve PRODUCTION Deployment?'
                     }
-                sh 'scp -i  /Users/shahinahmed/Documents/aws-shahin.pem /var/lib/jenkins/workspace/package/webapp/target/webapp.war ec2-user@34.240.38.127:/opt/tomcat/tomcat8/webapps'
+                sh 'scp -i  /Users/Shared/Jenkins/aws-shahin.pem /var/lib/jenkins/workspace/package/webapp/target/webapp.war ec2-user@34.240.38.127:/opt/tomcat/tomcat8/webapps'
             }
             post{
                 success{
