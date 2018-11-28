@@ -4,8 +4,8 @@ pipeline {
         maven 'localMaven'
     }
         parameters {
-         string(name: 'tomcat_uat', defaultValue: '34.240.192.242', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '54.246.133.89', description: 'Production Server')
+         string(name: 'tomcat_uat', defaultValue: '34.243.81.194', description: 'Staging Server')
+         string(name: 'tomcat_prod', defaultValue: '34.240.38.127', description: 'Production Server')
     }
     triggers {
         pollSCM('* * * * *')
